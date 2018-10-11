@@ -1,17 +1,15 @@
-// actions for showing and hiding dialog
-export const SHOW_DIALOG = 'SHOW_DIALOG';
-export const showDialog = () => ({
-  type: SHOW_DIALOG
+export const SHOW_ACTIVITY_DIALOG = 'SHOW_ACTIVITY_DIALOG';
+export const showActivityDialog = () => ({
+    type: SHOW_ACTIVITY_DIALOG
 });
 
-export const HIDE_DIALOG = 'HIDE_DIALOG';
-export const hideDialog = () => ({
-  type: HIDE_DIALOG
+export const HIDE_ACTIVITY_DIALOG = 'HIDE_ACTIVITY_DIALOG';
+export const hideActivityDialog = () => ({
+    type: HIDE_ACTIVITY_DIALOG
 });
 
-// setting logout time
-export const LOGOUT_TIME = 'LOGOUT_TIME';
-export const logoutTime = time => ({
-  type: LOGOUT_TIME,
-  time
+export const SET_LOGOUT_TIME = 'SET_LOGOUT_TIME';
+export const setLogoutTime = logoutTime => ({
+    type: SET_LOGOUT_TIME,
+    logoutTime
 });

@@ -1,27 +1,28 @@
-('use strict');
+import {
+  SHOW_ACTIVITY_DIALOG,
+  HIDE_ACTIVITY_DIALOG,
+  SET_LOGOUT_TIME
+} from '../actions/activity';
 
-import { SHOW_DIALOG, HIDE_DIALOG, LOGOUT_TIME } from '../actions/activity';
-
-//const initialState
 const initialState = {
-  dialogue: false,
-  time: 0
+  showDialog: false,
+  logoutTime: null
 };
 
-//export default actions
 export default (state = initialState, action) => {
-  if (action.type === SHOW_DIALOG) {
-    Object.assign({}, state, {
-      dialogue: true
-    });
-  } else if (action.type === HIDE_DIALOG) {
-    Object.assign({}, state, {
-      dialogue: false
-    });
-  } else if (action.type === LOGOUT_TIME) {
-    Object.assign({}, state, {
-      time: action.time
-    });
+  if (action.type === SHOW_ACTIVITY_DIALOG) {
+      return Object.assign({}, state, {
+          showDialog: true
+      });
+  } else if (action.type === HIDE_ACTIVITY_DIALOG) {
+      return Object.assign({}, state, {
+          showDialog: false
+      });
+  } else if (action.type === SET_LOGOUT_TIME) {
+      return Object.assign({}, state, {
+          logoutTime: action.logoutTime
+      });
   }
+
   return state;
 };
